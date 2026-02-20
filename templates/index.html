@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Fraud Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚨 Job Fraud Detection System</h1>
+    <p>Detect fake job messages instantly using AI</p>
+
+    <form method="POST">
+        <textarea name="message" placeholder="Paste job message here..." required></textarea>
+        <button type="submit">Analyze Message</button>
+    </form>
+
+    {% if result %}
+        <div class="result-box">
+            <h2>{{ result }}</h2>
+            <p>{{ confidence }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
